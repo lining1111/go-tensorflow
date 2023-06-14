@@ -3,9 +3,12 @@ module go-tensorflow
 go 1.18
 
 require (
+	github.com/esimov/pigo v1.4.6
 	github.com/go-audio/audio v1.0.0
 	github.com/go-audio/wav v1.1.0
 	github.com/wamuir/graft v0.4.0
+	gocv.io/x/gocv v0.33.0
+	golang.org/x/image v0.8.0
 )
 
 require (
