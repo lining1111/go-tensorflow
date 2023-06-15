@@ -9,6 +9,7 @@ require (
 	github.com/wamuir/graft v0.4.0
 	gocv.io/x/gocv v0.33.0
 	golang.org/x/image v0.8.0
+	gonum.org/v1/gonum v0.13.0
 )
 
 require (

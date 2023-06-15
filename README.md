@@ -18,3 +18,8 @@
     初期的几个工程，是从最近的书籍上摘取的部分章节的工程，主要golang tensorflow的，意图是通过这些来学习到用golang
     tensorflow库，来完成机器学习的编程。内容主要涉及：数据初步分析，数据清洗与整理、调用tensorflow现成的模型进行机器学习。
     并以此来完成自己使用机器学习库的目的。当然能想到的是，基于自己的主编程语言c++，还应该开辟一个opencv的学习代码。
+
+## linear
+
+    用tesnsorflow库做线性运算，y=W*x+bias
+    tensorflow内是数据类型和graph session等外部结构，op库是放置图上的节点，及其操作
