@@ -15,6 +15,8 @@ import (
 	"path/filepath"
 )
 
+//这个工程和tensorflow的go下example_inception_inference_test.go一模一样
+
 func main() {
 	// An example for using the TensorFlow Go API for image recognition
 	// using a pre-trained inception model (http://arxiv.org/abs/1512.00567).
@@ -85,6 +87,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	//这里的name是可以通过netron来查看模型的节点名字来确定的
 	output, err := session.Run(
 		map[tf.Output]*tf.Tensor{
 			graph.Operation("input").Output(0): tensor,
@@ -104,6 +107,7 @@ func main() {
 	printBestLabel(probabilities, labelsfile)
 }
 
+//printBestLabel 找到概率最大的那个索引，这个索引对应label_strings.txt中行数的内容-名字
 func printBestLabel(probabilities []float32, labelsFile string) {
 	bestIdx := 0
 	for i, p := range probabilities {

@@ -1,8 +1,8 @@
 # Tensorflow Go API Audio Example
 
-An example of using a neural network model (LSTM) with the Tensorflow Go API.
+使用神经网络模型（LSTM）和Tensorflow Go API的示例。
 
-The model converts a clean guitar signal into an overdriven one, sonically similar to the Tube Screamer TS9
+该模型将干净的吉他信号转换为过驱动信号，在声音上类似于Tube Screamer TS9
 
 ## Installation
 Read documentation for installing the Go bindings for TensorFlow.

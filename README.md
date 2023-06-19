@@ -19,7 +19,35 @@
     tensorflow库，来完成机器学习的编程。内容主要涉及：数据初步分析，数据清洗与整理、调用tensorflow现成的模型进行机器学习。
     并以此来完成自己使用机器学习库的目的。当然能想到的是，基于自己的主编程语言c++，还应该开辟一个opencv的学习代码。
 
-## linear
+## linear linear_regression
 
     用tesnsorflow库做线性运算，y=W*x+bias
     tensorflow内是数据类型和graph session等外部结构，op库是放置图上的节点，及其操作
+    这块的延伸应该是结合tensor的例程来做，但是可惜的是都是python的
+    这里可以看出go 版本下的tensorflow库，只能正向输出，不能做训练。
+    对照实际的tensorflow模型，调用的时候可以根据节点的名称来设置Run的输入和输出，但是golang自己建立节点的时候，
+    有两种做法：
+    x, _ := graph.AddOperation(tf.OpSpec{Type: "Placeholder", Name: "x", Attrs: map[string]interface{}{
+		"dtype": tf.Float,
+	}})
+        这样的有节点名称，但是对加入操作十分不友好
+
+    scope := op.NewScopeWithGraph(graph)
+	mul := op.Mul(scope, x.Output(0), w.Output(0))
+
+        这样是可以方便的通过scope来加入操作，但是节点名称设置不了。
+
+## deepLearning
+
+    这个工程和tensorflow的go下example_inception_inference_test.go一模一样
+
+## faceFinder
+
+    pigo "github.com/esimov/pigo/core" 主要是利用这个库来识别图片
+
+## audio-example
+
+    
+## realtimeObjectDetection
+
+    

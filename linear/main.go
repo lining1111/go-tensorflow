@@ -5,6 +5,7 @@ import (
 	tf "github.com/wamuir/graft/tensorflow"
 	"github.com/wamuir/graft/tensorflow/op"
 	"math/rand"
+	"os"
 )
 
 func main() {
@@ -51,6 +52,9 @@ func main() {
 		mul   = op.MatMul(scope.SubScope("mul"), x, W)
 		y     = op.BiasAdd(scope.SubScope("y"), mul, bias)
 	)
+	writer, _ := os.OpenFile("graph", os.O_WRONLY|os.O_CREATE, 0644)
+	//WriteTo 和Import
+	g.WriteTo(writer)
 
 	fmt.Println(scope.Err())
 	sess, err := tf.NewSession(g, nil)
